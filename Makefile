@@ -18,7 +18,7 @@ install: install-agent-xdg install-makefile-xdg
 install-agent-xdg: org.freedesktop.xdg.basedir.plist $(agentdir)/
 	$(INSTALL) $^
 
-install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk Linux.xdg.mk $(makefilesdir)/
+install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk $(makefilesdir)/
 	$(INSTALL) $^
 
 $(makefilesdir)/:
