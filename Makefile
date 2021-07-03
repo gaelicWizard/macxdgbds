@@ -1,4 +1,4 @@
-pkgname = osx-xdg-basedir
+pkgname = osx-xdg-basedir# $Id$
 include xdgbasedir.mk
 
 agentdir ?= $(prefix)/LaunchAgents# ~/Library/LaunchAgents

@@ -1,3 +1,4 @@
+# osx-xdg-basedir $Id$
 PREFIX ?= ~
 
 prefix ?= $(PREFIX)/.local
