@@ -1,15 +1,20 @@
-pkgname = osx-xdg-basedir# $Id$
-include xdgbasedir.mk
+pkgname = org.freedesktop.xdg.basedir# $Id$
+include xdgbasedir.mk# ~/Library/Makefiles
+
+laxdg ?= $(agentdir)/$(pkgname).plist
 
 agentdir ?= $(prefix)/LaunchAgents# ~/Library/LaunchAgents
 envdir ?= $(datarootdir)/MacOSX# ~/Library/Application Support/MacOSX
 oldenvdir ?= $(PREFIX)/.MacOSX# ~/.MacOSX
-modereadonly ?= 444# ugo=r
-moderwdir ?= 755# u=rwx,go=rx
 makefilesdir ?= $(prefix)/Makefiles# ~/Library/Makefiles
 
-INSTALL ?= install -bCpSv -m $(modereadonly)
-INSTALL_DIR ?= install -d -v -m $(moderwdir)
+moderobin ?= 555# ugo=rx
+moderodata ?= 444# ugo=r
+moderw ?= 755# u=rwx,go=rx
+
+INSTALL_BIN ?= install -bCpSv -m $(modeobin)
+INSTALL_DATA ?= install -bCpSv -m $(moderodata)
+INSTALL_DIR ?= install -d -v -m $(moderw)
 
 GIT ?= /usr/bin/git
 
@@ -22,15 +27,15 @@ autoinstall: $(GIT)
 git-pull: $(GIT)
 	@$(GIT) pull
 
-install: install-agent-xdg install-makefile-xdg
+install: $(laxdg) install-makefile-xdg
 
-install-agent-xdg: org.freedesktop.xdg.basedir.plist $(agentdir)/
-	$(INSTALL) $^
-	launchctl unload $(agentdir)/$<
-	launchctl load -w $(agentdir)/$<
+$(laxdg): $(pkgname).plist |$(agentdir)/
+	$(INSTALL_DATA) $< $@
+	launchctl unload $@
+	launchctl load -w $@
 
-install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk $(makefilesdir)/
-	$(INSTALL) $^
+install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk |$(makefilesdir)/
+	$(INSTALL_DATA) $^ $(makefilesdir)/
 
 $(makefilesdir)/:
 	$(INSTALL_DIR) $@
