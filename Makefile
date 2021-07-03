@@ -11,8 +11,13 @@ makefilesdir ?= $(prefix)/Makefiles# ~/Library/Makefiles
 INSTALL ?= install -bCpSv -m $(modereadonly)
 INSTALL_DIR ?= install -d -v -m $(moderwdir)
 
+GIT ?= /usr/bin/git
+
 # First target is the default target which will be invoked when typing `make`.
 all: print-help
+git-pull: $(GIT)
+	$(GIT) pull
+
 install: install-agent-xdg install-makefile-xdg
 
 install-agent-xdg: org.freedesktop.xdg.basedir.plist $(agentdir)/
