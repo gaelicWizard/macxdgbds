@@ -16,10 +16,10 @@ all: print-help
 install: install-agent-xdg install-makefile-xdg
 
 install-agent-xdg: org.freedesktop.xdg.basedir.plist $(agentdir)/
-	$(INSTALL) $< $(agentdir)/
+	$(INSTALL) $^
 
-install-makefile-xdg: xdgbasedir.mk $(makefilesdir)/
-	$(INSTALL) $< $(makefilesdir)/
+install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk Linux.xdg.mk $(makefilesdir)/
+	$(INSTALL) $^
 
 $(makefilesdir)/:
 	$(INSTALL_DIR) $@
