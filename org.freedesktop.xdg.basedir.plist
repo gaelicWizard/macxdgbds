@@ -4,6 +4,11 @@
 <dict>
 	<key>Label</key><!-- $Id$ -->
 	<string>org.freedesktop.xdg.basedir</string>
+	<key>LimitLoadToSessionType</key>
+	<array>
+		<string>Aqua</string>
+		<string>Background</string>
+	</array>
 	<key>Program</key>
 	<string>/bin/sh</string>
 	<key>ProgramArguments</key>
