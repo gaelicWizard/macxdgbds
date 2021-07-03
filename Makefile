@@ -5,10 +5,11 @@ agentdir ?= $(prefix)/LaunchAgents# ~/Library/LaunchAgents
 envdir ?= $(datarootdir)/MacOSX# ~/Library/Application Support/MacOSX
 oldenvdir ?= $(PREFIX)/.MacOSX# ~/.MacOSX
 modereadonly ?= 444# ugo=r
+moderwdir ?= 755# u=rwx,go=rx
 makefilesdir ?= $(prefix)/Makefiles# ~/Library/Makefiles
 
 INSTALL ?= install -bCpSv -m $(modereadonly)
-INSTALL_DIR ?= install -d -v -m 755
+INSTALL_DIR ?= install -d -v -m $(moderwdir)
 
 # First target is the default target which will be invoked when typing `make`.
 all: print-help
