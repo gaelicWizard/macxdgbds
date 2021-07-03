@@ -1,5 +1,5 @@
 # osx-xdg-basedir $Id$
-PREFIX ?= ~
+#
 # For a nice overview of the directory structure, please see:
 #  http://wwwmain.gnustep.org/resources/documentation/User/GNUstep/filesystem_5.html#SEC6
 prefix ?= $(PREFIX)/Library
