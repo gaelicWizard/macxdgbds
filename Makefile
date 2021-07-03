@@ -14,9 +14,13 @@ INSTALL_DIR ?= install -d -v -m $(moderwdir)
 GIT ?= /usr/bin/git
 
 # First target is the default target which will be invoked when typing `make`.
-all: print-help
+all: print-help #autoinstall
+
+autoinstall: $(GIT)
+# clone to $TMPDIR/$pkgname then `make -C $TMPDIR/$pkgname install`...
+
 git-pull: $(GIT)
-	$(GIT) pull
+	@$(GIT) pull
 
 install: install-agent-xdg install-makefile-xdg
 
