@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Label</key><!-- $Id$ -->
+	<key>Label</key>
 	<string>org.freedesktop.xdg.basedir</string>
+	<key>ServiceDescription</key>
+	<string>FreeDesktop XDG BaseDir specification for Mac ($Id$)</string>
 	<key>LimitLoadToSessionType</key>
 	<array>
 		<string>Aqua</string>
