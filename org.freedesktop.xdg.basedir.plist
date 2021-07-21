@@ -25,7 +25,7 @@ launchctl setenv XDG_CACHE_HOME "${XDG_CACHE_HOME:=$HOME/Library/Caches}" &amp; 
 
 launchctl setenv XDG_STATE_HOME "${XDG_STATE_HOME:=$HOME/Library/Saved Application State}"
 
-launchctl setenv XDG_CONFIG_DIRS "/Library/Preferences:/Network/Library/Preferences:/etc"
+launchctl setenv XDG_CONFIG_DIRS "/Library/Preferences:/Network/Library/Preferences:/etc/local:/etc/xdg:/etc"
 launchctl setenv XDG_DATA_DIRS "/Library/Application Support:/usr/local/share:/Network/Library/Application Support:/usr/share"
 		</string>
 	</array>
