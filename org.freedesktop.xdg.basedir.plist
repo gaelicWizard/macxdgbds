@@ -27,9 +27,9 @@ DUCD="$(getconf DARWIN_USER_CACHE_DIR)"
 launchctl setenv XDG_CACHE_HOME "${XDG_CACHE_HOME:=$DUCD}" &amp;
 
 
-launchctl setenv XDG_CONFIG_DIRS "/Library/Preferences:/Network/Library/Preferences:/etc/local:/etc/xdg:/etc"
-launchctl setenv XDG_DATA_DIRS "/Library/Application Support:/usr/local/share:/Network/Library/Application Support:/usr/share"
-		</string>
+launchctl setenv XDG_CONFIG_DIRS "/Library/Preferences:/Network/Library/Preferences:/etc/local:/etc/xdg:/etc" &amp;
+launchctl setenv XDG_DATA_DIRS "/Library/Application Support:/usr/local/share:/Network/Library/Application Support:/usr/share" &amp;
+wait	</string>
 	</array>
 </dict>
 </plist>
