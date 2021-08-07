@@ -7,11 +7,11 @@ PREFIX ?= ~
 sinclude $(UNAME_S).xdg.mk
 #
 
-prefix ?= $(PREFIX)/.local
-XDG_DATA_HOME ?= $(prefix)/share
-XDG_CONFIG_HOME ?= $(PREFIX)/.config
-#XDG_STATE_HOME ?= 
-#XDG_RUNTIME_DIR ?= 
+prefix ?= $(PREFIX)/.local# ~/Library
+XDG_DATA_HOME ?= $(prefix)/share# ~/Library/Application\ Support
+XDG_CONFIG_HOME ?= $(PREFIX)/.config# ~/Library/Preferences
+XDG_STATE_HOME ?= $(PREFIX)/.savedState# ~/Library/Saved\ Application\ State
+#XDG_RUNTIME_DIR ?= $TMPDIR
 
 datarootdir ?= $(XDG_DATA_HOME)
 sysconfdir ?= $(XDG_CONFIG_HOME)
