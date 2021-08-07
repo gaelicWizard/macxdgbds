@@ -30,8 +30,8 @@ git-pull: $(GIT)
 install: $(laxdg) install-makefile-xdg
 
 $(laxdg): $(pkgname).plist |$(agentdir)/
-	$(INSTALL_DATA) $< $@
 	launchctl unload $@
+	$(INSTALL_DATA) $< $@
 	launchctl load -w $@
 
 install-makefile-xdg: xdgbasedir.mk Darwin.xdg.mk |$(makefilesdir)/
